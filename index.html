@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zil Sheth — Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF8FD;--white:#FFFFFF;--lp:#F0EBF9;--ls:#E2D5F5;--lm:#C4AEED;
+  --ac:#6B3FA0;--ac2:#8B5FBF;--dk:#141020;--ink:#18142E;--ink2:#5C5280;
+  --bd:rgba(107,63,160,0.11);--bd2:rgba(255,255,255,0.1);
+  --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}input,textarea,button,select{font-family:var(--fb);}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:15px;line-height:1.7;overflow-x:hidden}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:none}
+.stg>*{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.stg.vis>*:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+.stg.vis>*:nth-child(2){opacity:1;transform:none;transition-delay:.08s}
+.stg.vis>*:nth-child(3){opacity:1;transform:none;transition-delay:.16s}
+.stg.vis>*:nth-child(4){opacity:1;transform:none;transition-delay:.24s}
+.stg.vis>*:nth-child(5){opacity:1;transform:none;transition-delay:.32s}
+.stg.vis>*:nth-child(6){opacity:1;transform:none;transition-delay:.4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;background:rgba(250,248,253,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--bd)}
+.nl{font-family:var(--fd);font-size:1.05rem;color:var(--ink);text-decoration:none}
+.nr{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nr a{font-family:var(--fb);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);text-decoration:none;transition:color .2s}
+.nr a:hover{color:var(--ac)}
+.np{background:var(--ac) !important;color:#fff !important;padding:.45rem 1.15rem;border-radius:100px;transition:background .2s !important}
+.np:hover{background:var(--ac2) !important}
+.hero{min-height:78vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);padding-top:60px}
+.hl{display:flex;flex-direction:column;justify-content:center;padding:2.5rem 2.5rem 2.5rem 3rem}
+.hey{font-family:var(--fb);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ac);margin-bottom:1.4rem;display:flex;align-items:center;gap:9px}
+.hey::before{content:'';width:22px;height:1px;background:var(--ac);display:block}
+.hn{font-family:var(--fd);font-size:clamp(2.8rem,4.8vw,5.2rem);line-height:1;letter-spacing:-.03em;margin-bottom:.4rem}
+.ht{font-family:var(--fd);font-size:clamp(.95rem,1.4vw,1.15rem);font-style:italic;color:var(--ac);margin-bottom:1.35rem;line-height:1.4}
+.hs{font-family:var(--fb);font-size:.93rem;color:var(--ink2);max-width:390px;margin-bottom:2rem;line-height:1.85}
+.hc{display:flex;gap:.8rem;flex-wrap:wrap}
+.bf{background:var(--ac);color:#fff;padding:.78rem 1.75rem;font-family:var(--fb);font-size:.83rem;font-weight:500;border:none;cursor:pointer;text-decoration:none;display:inline-block;border-radius:100px;transition:background .2s,transform .15s}
+.bf:hover{background:var(--ac2);transform:translateY(-2px)}
+.br{background:transparent;color:var(--ac);padding:.78rem 1.75rem;font-family:var(--fb);font-size:.83rem;font-weight:500;border:1.5px solid var(--ac);cursor:pointer;text-decoration:none;display:inline-block;border-radius:100px;transition:all .2s}
+.br:hover{background:var(--lp)}
+.hr{position:relative;overflow:hidden;background:linear-gradient(180deg,#eee6f8 0%,#e2d5f5 100%)}
+.ha{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:400px}
+.hfloat{position:absolute;bottom:1.5rem;left:1.25rem;right:1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.hfc{background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:10px;padding:.75rem .95rem}
+.hfl{font-family:var(--fb);font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:.1rem}
+.hfv{font-family:var(--fd);font-size:.85rem;color:var(--ink);line-height:1.25}
+.hfv.hi{color:var(--ac)}
+.sb{background:var(--ac);padding:1.35rem 2.5rem;display:flex;align-items:center;justify-content:space-around;gap:1.25rem;flex-wrap:wrap}
+.si{text-align:center;color:#fff}
+.sn{font-family:var(--fd);font-size:2rem;line-height:1;margin-bottom:.12rem}
+.sl{font-family:var(--fb);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.sdv{width:1px;height:38px;background:rgba(255,255,255,.2)}
+.sec{padding:2.75rem 2.5rem;max-width:1600px;margin:0 auto;width:100%}
+.stag{font-family:var(--fb);font-size:.63rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:.7rem;display:flex;align-items:center;gap:7px}
+.stag::before{content:'';width:14px;height:1px;background:var(--ac);display:block}
+.stit{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:.85rem}
+.sint{font-family:var(--fb);font-size:.93rem;color:var(--ink2);max-width:580px;margin-bottom:2.5rem;line-height:1.85}
+.dv{height:1px;background:var(--bd)}
+.ag{display:grid;grid-template-columns:1.08fr .92fr;gap:2.6rem;align-items:start}
+.ab p{font-family:var(--fb);font-size:.88rem;color:var(--ink2);margin-bottom:.65rem;line-height:1.75;text-align:justify}
+.ab p strong{color:var(--ink);font-weight:500}
+.ab h3{font-family:var(--fd);font-size:1.1rem;margin:1.1rem 0 .5rem;color:var(--ink)}
+.ab ul{margin:.3rem 0 .65rem 1.1rem;color:var(--ink2);font-family:var(--fb);font-size:.85rem;line-height:1.7}
+.rb{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;padding:.62rem 1.4rem;border-radius:100px;text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:500;margin-top:1.1rem;transition:background .2s}
+.rb:hover{background:var(--ac)}
+.pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.1rem}
+.pill{background:var(--lp);color:var(--ac);padding:.28rem .78rem;font-family:var(--fb);font-size:.71rem;font-weight:500;border-radius:100px;border:1px solid var(--lm)}
+.pill.n{background:var(--bg);color:var(--ink2);border-color:var(--bd)}
+.aside{display:flex;flex-direction:column;gap:.85rem}
+.afc{background:var(--lp);border:1px solid var(--bd);border-radius:10px;padding:.95rem 1.2rem;display:flex;gap:.75rem;align-items:flex-start}
+.aico{font-size:1.05rem;flex-shrink:0;margin-top:.1rem}
+.afc p{font-family:var(--fb);font-size:.79rem;color:var(--ink2);line-height:1.65}
+.me-card{margin-top:1.2rem;padding:1.1rem 1.15rem;border:1px solid var(--bd);border-radius:16px;background:linear-gradient(180deg,var(--white) 0%,#faf6ff 100%);box-shadow:0 10px 28px rgba(107,63,160,.06)}
+.me-card h3{font-family:var(--fd);font-size:1.22rem;color:var(--ink);margin-bottom:.25rem}
+.me-card p{font-family:var(--fb);font-size:.78rem;color:var(--ink2);line-height:1.65;margin-bottom:.9rem}
+.me-grid{display:flex;flex-direction:column;gap:.45rem}
+.me-fact{background:var(--lp);border:1px solid var(--bd);border-radius:8px;padding:.45rem .75rem;display:flex;gap:.55rem;align-items:center}
+.me-fact span{font-size:1rem;line-height:1}
+.me-fact div{font-family:var(--fb);font-size:.72rem;color:var(--ink2);line-height:1.55}
+.iglnk{display:inline-flex;align-items:center;gap:6px;margin-top:.65rem;font-family:var(--fb);font-size:.74rem;color:var(--ac);text-decoration:none}
+.iglnk:hover{color:var(--ac2)}
+.fc{background:var(--white);border:1px solid var(--bd);border-radius:13px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 4px 28px rgba(107,63,160,.07);margin-bottom:2.25rem;transition:transform .25s,box-shadow .25s}
+.fc:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(107,63,160,.12)}
+.fv{background:linear-gradient(140deg,#1a2a1e 0%,#0d1810 100%);padding:2.25rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.fv::after{content:'OVO';position:absolute;bottom:-.5rem;right:-.25rem;font-family:var(--fd);font-size:6.5rem;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.aflag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:.22rem .7rem;font-family:var(--fb);font-size:.59rem;color:rgba(255,255,255,.6);margin-bottom:.8rem;width:fit-content}
+.fn{font-family:var(--fd);font-size:1.8rem;color:#fff;line-height:1.05;margin-bottom:.32rem}
+.fsb{font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.5)}
+.fbadges{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.9rem}
+.fb{background:rgba(255,255,255,.1);color:#fff;font-family:var(--fb);font-size:.58rem;padding:.18rem .52rem;border-radius:100px;border:1px solid rgba(255,255,255,.14)}
+.fbdy{padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.fbdy h4{font-family:var(--fd);font-size:.92rem;margin-bottom:.48rem;color:var(--ink)}
+.fbdy p{font-family:var(--fb);font-size:.8rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem}
+.fstats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.25rem}
+.fst{background:var(--lp);padding:.58rem .65rem;border-radius:7px}
+.fstl{font-family:var(--fb);font-size:.57rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin-bottom:.1rem}
+.fstv{font-family:var(--fb);font-size:.78rem;font-weight:500;color:var(--ink)}
+.flnk{font-family:var(--fb);font-size:.76rem;font-weight:500;color:var(--ac);text-decoration:none}
+.flnk:hover{color:var(--dk)}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.wc{background:var(--lp);border:1px solid var(--bd);padding:1.35rem;border-radius:10px;transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.wc:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(107,63,160,.12)}
+.wi{font-size:1.4rem;margin-bottom:.55rem}
+.wcat{font-family:var(--fb);font-size:.59rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.25rem}
+.wtit{font-family:var(--fd);font-size:.87rem;margin-bottom:.42rem;line-height:1.3;color:var(--ink)}
+.wc p{font-family:var(--fb);font-size:.74rem;color:var(--ink2);line-height:1.68;margin-bottom:.45rem;flex:1}
+.wres{font-family:var(--fb);font-size:.69rem;color:var(--ac);font-weight:500;border-top:1px solid var(--bd);padding-top:.45rem;margin-top:auto}
+.wlnk{font-family:var(--fb);font-size:.69rem;font-weight:500;color:var(--ac);margin-top:.42rem;display:block}
+.mwrap{overflow:hidden;position:relative;padding:.4rem 0 2rem}
+.mwrap::before,.mwrap::after{content:'';position:absolute;top:0;bottom:0;width:70px;z-index:2}
+.mwrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.mwrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.mtrack{display:flex;gap:.7rem;animation:scroll 30s linear infinite;width:max-content}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.bchip{background:var(--lp);border:1px solid var(--bd);border-radius:100px;padding:.48rem 1.1rem;white-space:nowrap;display:flex;align-items:center;gap:6px;font-family:var(--fb);font-size:.78rem;font-weight:500;color:var(--ink2);flex-shrink:0;transition:background .2s,color .2s}
+.bchip:hover{background:var(--ls);color:var(--ac)}
+.bdot{width:5px;height:5px;border-radius:50%;background:var(--ac);flex-shrink:0;opacity:.5}
+.exsec{background:var(--white)}
+.exlbl{text-align:center;font-family:var(--fb);font-size:.85rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:1rem}
+.er{display:grid;grid-template-columns:180px 1fr;gap:2.5rem;padding:1.35rem 0;border-top:1px solid var(--bd);align-items:start}
+.er:last-child{border-bottom:1px solid var(--bd)}
+.el{text-align:right;padding-right:1.25rem}
+.edt{font-family:var(--fb);font-size:.72rem;letter-spacing:.1em;color:var(--ink2);margin-bottom:.45rem;line-height:1.5}
+.ero{font-family:var(--fd);font-size:1.18rem;color:var(--ink);line-height:1.2;font-style:italic}
+.eco{font-family:var(--fb);font-weight:500;font-size:.83rem;color:var(--ac);margin-bottom:.58rem;display:block}
+.ebo{font-family:var(--fb);font-size:.83rem;color:var(--ink2);line-height:1.82;margin-bottom:.65rem;text-align:justify}
+.etags{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.55rem}
+.etag{font-family:var(--fb);font-size:.6rem;padding:.14rem .52rem;border:1px solid var(--bd);color:var(--ink2);border-radius:100px}
+.wrsec{position:relative;overflow:hidden}
+.wrbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.wrov{position:absolute;inset:0;background:rgba(20,16,32,.83)}
+.wrin{position:relative;z-index:1;padding:2.75rem 2.5rem;max-width:1400px;margin:0 auto;width:100%}
+.wrsec .stag{color:rgba(196,174,237,.8)}
+.wrsec .stag::before{background:rgba(196,174,237,.8)}
+.wrsec .stit{color:#fff}
+.wrsec .sint{color:rgba(255,255,255,.5)}
+.wrg{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+.wcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);padding:1.3rem;border-radius:10px;text-decoration:none;color:inherit;display:block;transition:background .2s,transform .2s}
+.wcard:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.wcat{font-family:var(--fb);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lm);margin-bottom:.28rem}
+.wtitle{font-family:var(--fd);font-size:.87rem;color:#fff;margin-bottom:.42rem;line-height:1.3}
+.wcard p{font-family:var(--fb);font-size:.73rem;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:.65rem}
+.wlk{font-family:var(--fb);font-size:.68rem;font-weight:500;color:var(--lm)}
+.phsec{background:var(--bg)}
+.iphgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.16);border:1px solid #222}
+.iphhdr{background:#1c1c1e;padding:.65rem 1.1rem;display:flex;align-items:center;justify-content:space-between;grid-column:1/-1}
+.iphhdr-t{font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff}
+.iphhdr-s{font-family:var(--fb);font-size:.62rem;color:rgba(255,255,255,.4)}
+.iphhdr-b{font-family:var(--fb);font-size:.68rem;color:#0A84FF;font-weight:500}
+.ptile{position:relative;overflow:hidden;cursor:pointer;background:#111;aspect-ratio:1/1}
+.ptile.tall{grid-row:span 1}
+.ptile.wide{grid-column:span 1}
+.ptile img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
+.ptile.tall img{aspect-ratio:auto}
+.ptile.wide img{aspect-ratio:auto}
+.ptile:hover img{transform:scale(1.04)}
+.ptov{position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.52));opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.65rem}
+.ptile:hover .ptov{opacity:1}
+.ptlbl{color:#fff;font-family:var(--fb);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.iglnk2{display:inline-flex;align-items:center;gap:8px;margin-top:1.1rem;background:var(--lp);border:1px solid var(--bd);border-radius:9px;padding:.7rem 1.2rem;font-family:var(--fb);font-size:.75rem;color:var(--ink2);text-decoration:none;transition:background .2s}
+.iglnk2:hover{background:var(--ls)}
+.crtsec{background:var(--lp)}
+.crtg{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.crtcard{background:var(--white);border:1px solid var(--bd);border-radius:10px;padding:1.1rem;display:flex;align-items:flex-start;gap:.8rem}
+.crico{font-size:1.4rem;flex-shrink:0}
+.crtnm{font-family:var(--fb);font-weight:500;font-size:.84rem;margin-bottom:.08rem;color:var(--ink)}
+.crtis{font-family:var(--fb);font-size:.72rem;color:var(--ink2);margin-bottom:.48rem}
+.crtlk{font-family:var(--fb);font-size:.69rem;font-weight:500;color:var(--ac);text-decoration:none}
+.sksec{background:var(--bg)}
+.skg{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:1.5rem}
+.skc{background:var(--white);padding:1.2rem;border-radius:10px;border:1px solid var(--bd)}
+.skico{font-size:1.15rem;margin-bottom:.48rem}
+.skt{font-family:var(--fd);font-size:.92rem;margin-bottom:.28rem;color:var(--ink)}
+.skc p{font-family:var(--fb);font-size:.73rem;color:var(--ink2);line-height:1.58}
+.langs{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.25rem}
+.lang{background:var(--ls);border:1px solid var(--lm);padding:.38rem .9rem;border-radius:100px;font-family:var(--fb);font-size:.74rem;color:var(--ac)}
+.ctsec{position:relative;overflow:hidden;padding-bottom:1.5rem}
+.ctbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.ctov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,8,20,.45) 0%,rgba(10,8,20,.62) 100%)}
+.ctin{position:relative;z-index:1;padding:2.75rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;max-width:1400px;margin:0 auto;width:100%}
+.cl .stag{color:rgba(196,174,237,.92);letter-spacing:.18em}
+.cl .stag::before{background:rgba(196,174,237,.92)}
+.cl .stit{color:#fff;margin-bottom:.8rem;white-space:normal;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.1}
+.clop{font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.62);margin-bottom:1.1rem;line-height:1.7}
+.clbr{font-family:var(--fd);font-size:1rem;font-style:italic;color:rgba(255,255,255,.78);margin-bottom:1.35rem;line-height:1.65;border-left:2px solid rgba(196,174,237,.45);padding-left:.9rem}
+.clinks{display:flex;flex-direction:column}
+.clnk{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.72);text-decoration:none;font-family:var(--fb);font-size:.81rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s}
+.clnk:hover{color:#fff}
+.clnk strong{color:rgba(196,174,237,.65);font-family:var(--fb);font-size:.59rem;letter-spacing:.1em;text-transform:uppercase;min-width:68px;font-weight:500}
+.cglass{background:rgba(255,255,255,.11);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:1.75rem}
+.cglass h3{font-family:var(--fd);font-size:1.35rem;color:#fff;margin-bottom:.85rem;line-height:1.25}
+.bw{background:#fff;color:var(--ac);padding:.78rem 1.5rem;font-family:var(--fb);font-size:.83rem;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;text-align:center;border-radius:100px;transition:transform .15s,background .2s;letter-spacing:.02em}
+.bw:hover{transform:translateY(-2px);background:var(--lp)}
+footer{background:var(--lp);border-top:1px solid var(--bd);color:var(--ink2);padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-family:var(--fb);font-size:.72rem}
+footer a{color:var(--ink2);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--ac)}
+.fl{display:flex;gap:1.3rem}.ft-ico{color:var(--ink2);transition:color .2s;display:flex;align-items:center}.ft-ico:hover{color:var(--ac)}
+
+..about-photos{
+  margin-top:.1rem;
+  display:flex;
+  flex-direction:column;
+}
+.aph-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:.7rem}
+.aph-title{font-family:var(--fd);font-size:1.48rem;color:var(--ink);margin-bottom:.08rem}
+.aph-copy{font-family:var(--fb);font-size:.8rem;color:var(--ink2);line-height:1.65;margin:0;max-width:270px}
+.aph-kicker{font-family:var(--fb);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ac)}
+..about-mini-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  border-radius:14px;
+  overflow:hidden;
+  align-content:start;
+}
+.about-mini-grid img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;width:100%;height:100%;object-fit:cover;display:block}
+.about-mini-grid .tall{grid-row:span 2;aspect-ratio:.95/1.55}
+.about-mini-grid .wide{aspect-ratio:1/1}
+.about-mini-grid .wide2{grid-column:1/-1;aspect-ratio:2.2/1}
+.about-photos .iglnk2{margin-top:.95rem;width:100%;justify-content:center}
+
+@media(max-width:960px){
+  .hero,.ag,.ctin,.fc{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr !important;gap:2rem !important}
+  .er{grid-template-columns:1fr;gap:.85rem}
+  .el{text-align:left;padding-right:0}
+  .wg,.wrg{grid-template-columns:1fr 1fr}
+  .skg{grid-template-columns:1fr 1fr}
+  .crtg{grid-template-columns:1fr 1fr}
+  .iphgrid{grid-template-columns:repeat(2,1fr)}
+  .fstats{grid-template-columns:1fr 1fr}
+  .hr{min-height:380px}
+  .ha{width:100%;object-position:center top}
+  .hfloat{grid-template-columns:1fr 1fr;bottom:1rem;left:.75rem;right:.75rem;gap:.4rem}
+  .hfc{padding:.5rem .65rem}
+  .hn{font-size:clamp(2.2rem,8vw,3.5rem)}
+  nav{padding:.8rem 1.25rem}
+  .nr{display:none}
+  .sec,.wrin,.ctin{padding:1.75rem 1.1rem}
+  .sb{padding:1rem 1.25rem;gap:.75rem}
+  .sdv{display:none}
+  .si{min-width:40%}
+  .stit{white-space:normal !important;word-break:break-word}
+  h1,h2,h3{word-break:break-word}
+  .fv{min-height:200px;padding:1.5rem}
+  .fbdy{padding:1.25rem}
+  footer{flex-direction:column;gap:.6rem;text-align:center}
+}
+
+@media(max-width:600px){
+  .wg,.wrg,.skg,.crtg,.fstats{grid-template-columns:1fr}
+  .iphgrid{grid-template-columns:repeat(2,1fr)}
+  .hfloat{grid-template-columns:1fr 1fr;gap:.35rem}
+  .hfc{padding:.4rem .55rem}
+  .hfl{font-size:.5rem}
+  .hfv{font-size:.72rem}
+  .hn{font-size:clamp(2rem,10vw,3rem)}
+  .sb{flex-wrap:wrap;justify-content:center;padding:.85rem 1rem}
+  .si{min-width:42%;text-align:center}
+  .sdv{display:none}
+  .sec,.wrin,.ctin{padding:1.5rem 1rem}
+  .fc{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr !important;gap:1.5rem !important}
+  .crtg{grid-template-columns:1fr}
+  .ctin{grid-template-columns:1fr;gap:1.5rem}
+  .form-row{grid-template-columns:1fr}
+  .wrg{grid-template-columns:1fr}
+  .er{grid-template-columns:1fr;gap:.65rem;padding:1rem 0}
+  .exlbl{margin-bottom:.75rem}
+  .pills{gap:.28rem}
+  .pill,.pill.n{font-size:.65rem;padding:.22rem .6rem}
+  .me-card{padding:.85rem .9rem}
+  .me-fact div{font-size:.75rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#hero" class="nl">Zil Sheth</a>
+  <ul class="nr">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#photos">Photos</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#contact" class="np">Let's Talk</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="hero" style="padding-top:60px;padding-bottom:0">
+  <div class="hl">
+    <div class="hey">Digital Marketing · Storytelling · Strategy</div>
+    <h1 class="hn">Zil Sheth</h1>
+    <p class="ht">Making brands feel less like brands,<br>and more like friends.</p>
+    <p class="hs">Welcome to my little corner of the internet — where marketing meets curiosity, creativity, and just a tiny bit of chaos.</p>
+    <div class="hc">
+      <a href="#work" class="bf">View My Work</a>
+      <a href="#contact" class="br">Connect With Me</a>
+    </div>
+  </div>
+  <div class="hr">
+    <img id="img-hero" class="ha" src="hero.png" alt="Zil Sheth">
+    <div class="hfloat">
+      <div class="hfc"><div class="hfl">Education</div><div class="hfv" style="font-size:.75rem;line-height:1.35">Post-Graduate Certificate<br>Content & Digital Marketing<br><span style="font-size:.68rem;font-family:var(--fb)">York University</span></div></div>
+      <div class="hfc"><div class="hfl">Based in</div><div class="hfv">Toronto, Ontario 🇨🇦</div></div>
+      <div class="hfc"><div class="hfl">Originally from</div><div class="hfv">Vadodara, India</div></div>
+      <div class="hfc"><div class="hfl">Status</div><div class="hfv hi">Open to work ✦</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sb">
+  <div class="si"><div class="sn" data-target="25">0</div><div class="sl">% Engagement growth</div></div>
+  <div class="sdv"></div>
+  <div class="si"><div class="sn" data-target="6">0</div><div class="sl">+ Client brands managed</div></div>
+  <div class="sdv"></div>
+  <div class="si"><div class="sn" data-target="3">0</div><div class="sl">Post-grad programs</div></div>
+  <div class="sdv"></div>
+  <div class="si"><div class="sn" data-target="30">0</div><div class="sl">% User retention boost</div></div>
+  <div class="sdv"></div>
+  <div class="si"><div class="sn" data-target="120">0</div><div class="sl">Daily client interactions</div></div>
+</div>
+
+<div class="dv"></div>
+
+<section id="about" style="background:var(--bg);padding:2.25rem 0">
+  <div class="sec fu">
+    <div class="ag">
+      <div class="ab">
+        <span class="stag">About Me</span>
+        <h2 class="stit">Hello and welcome!</h2>
+        <p>This is the digital corner of Zil Sheth — marketer, writer, and storyteller.</p>
+        <p>Explore my work, learn my journey, or just stay to read a few stories :)</p>
+
+        <h3>Before Canada</h3>
+        <p>I grew up in Vadodara, Gujarat (India), where I completed my <strong>Bachelor's in Business Administration</strong> and began my career in marketing and SEO content writing.</p>
+        <p>I had plans to move to Canada for further studies — but like most plans in 2020, COVID had other ideas.</p>
+        <p>Instead of pausing, I kept building. I pursued a <strong>postgraduate program in Marketing Management</strong> while working full-time, gaining hands-on experience in social media campaigns, content strategy, and digital marketing projects.</p>
+
+        <h3>After the Move</h3>
+        <p>In 2023, I moved to Canada and continued my education through two postgraduate programs:</p>
+        <ul>
+          <li><strong>Business Analytics</strong> — Seneca College</li>
+          <li><strong>Content & Digital Marketing</strong> — York University</li>
+        </ul>
+        <p>Now based in Ontario, I'm constantly learning, experimenting, and exploring how brands can connect with people in more meaningful ways.</p>
+        <p>I currently work at <strong>Lanvac Surveillance</strong>, where I manage high-volume customer interactions and solve problems in fast-paced environments.</p>
+        <p>While it may not look like marketing at first glance, it has strengthened the skills that great marketing relies on:</p>
+        <ul>
+          <li>Clear communication under pressure</li>
+          <li>Quick decision-making</li>
+          <li>Understanding human behaviour</li>
+        </ul>
+        <p>At its core, marketing is about understanding people.</p>
+        <p>My interests lie in <strong>digital strategy, storytelling, audience psychology</strong>, and building brands that feel human rather than transactional.</p>
+        <p>This portfolio is where I share the work, ideas, and projects that reflect that journey.</p>
+        <a href="ZS Resume.pdf" download="ZS Resume.pdf" target="_blank" class="rb">📄 Download Resume</a>
+        <div class="pills">
+          <span class="pill">Social Media</span><span class="pill">Content Strategy</span><span class="pill">SEO</span><span class="pill">Google Ads</span><span class="pill">HubSpot</span>
+          <span class="pill n">Copywriting</span><span class="pill n">Campaign Planning</span><span class="pill n">Email Marketing</span><span class="pill n">Analytics</span><span class="pill n">A/B Testing</span>
+        </div>
+
+        <div class="me-card">
+          <h3>A few things that make me... me</h3>
+          <p>The slightly more personal side of the marketer.</p>
+
+          <div class="me-grid">
+            <div class="me-fact"><span>☀️</span><div>Sunrise-and-sunset obsessed. My camera roll is basically a nature documentary at this point.</div></div>
+            <div class="me-fact"><span>📺</span><div>Learned conversational Korean entirely through K-dramas. Subtitles are now optional — about 60% of the time.</div></div>
+            <div class="me-fact"><span>🐱</span><div>Living with three very opinionated cats that technically belong to my roommate. At this point they’ve adopted me.</div></div>
+            <div class="me-fact"><span>📚</span><div>Fastest reader in every room I’ve been in. Information is basically my love language.</div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="aside stg">
+        <div id="photos" class="about-photos" style="background:transparent;border:none;box-shadow:none;padding:.5rem 0">
+          <div style="margin-bottom:.85rem">
+            <div class="aph-kicker">Photography</div>
+            <h3 class="aph-title">Through My Lens</h3>
+          </div>
+                    <div class="iphgrid lens-grid">
+            <div class="iphhdr">
+              <div>
+                <div class="iphhdr-t">Recents</div>
+                <div class="iphhdr-s">18 Photos</div>
+              </div>
+              <div class="iphhdr-b">Select</div>
+            </div>
+            <div class="ptile"><img id="p-portrait" src="" alt="Portrait" loading="lazy"><div class="ptov"><div class="ptlbl">Portrait</div></div></div>
+            <div class="ptile"><img id="p-baby" src="" alt="Baby photo" loading="lazy"><div class="ptov"><div class="ptlbl">Baby Zil</div></div></div>
+            <div class="ptile"><img id="p-toronto" src="" alt="Toronto" loading="lazy"><div class="ptov"><div class="ptlbl">Toronto</div></div></div>
+            <div class="ptile"><img id="p-sunrise" src="" alt="Sunrise" loading="lazy"><div class="ptov"><div class="ptlbl">Sunrise</div></div></div>
+            <div class="ptile"><img id="p-egypt" src="" alt="Travel in Egypt" loading="lazy"><div class="ptov"><div class="ptlbl">Egypt</div></div></div>
+            <div class="ptile"><img id="p-niagara" src="" alt="Niagara Falls" loading="lazy"><div class="ptov"><div class="ptlbl">Niagara Falls</div></div></div>
+            <div class="ptile"><img id="p-skywheel" src="" alt="Niagara SkyWheel" loading="lazy"><div class="ptov"><div class="ptlbl">SkyWheel</div></div></div>
+            <div class="ptile"><img id="p-blue-mountain" src="" alt="Blue Mountain" loading="lazy"><div class="ptov"><div class="ptlbl">Blue Mountain</div></div></div>
+            <div class="ptile"><img id="p-museum" src="" alt="Museum of Illusions" loading="lazy"><div class="ptov"><div class="ptlbl">Museum of Illusions</div></div></div>
+            <div class="ptile"><img id="p-fictional-bf" src="" alt="Fictional boyfriend photo" loading="lazy"><div class="ptov"><div class="ptlbl">Fictional BF</div></div></div>
+            <div class="ptile"><img id="p-perfect-timing" src="" alt="Perfect timing" loading="lazy"><div class="ptov"><div class="ptlbl">Perfect Timing</div></div></div>
+            <div class="ptile"><img id="p-rainbow" src="" alt="Rainbow" loading="lazy"><div class="ptov"><div class="ptlbl">Rainbow</div></div></div>
+            <div class="ptile"><img id="p-seas-the-day" src="" alt="Seas the day" loading="lazy"><div class="ptov"><div class="ptlbl">Seas the Day</div></div></div>
+            <div class="ptile"><img id="p-school-merch" src="" alt="School merch" loading="lazy"><div class="ptov"><div class="ptlbl">School Merch</div></div></div>
+            <div class="ptile"><img id="p-lego-project" src="" alt="Lego project" loading="lazy"><div class="ptov"><div class="ptlbl">Lego Project</div></div></div>
+            <div class="ptile"><img id="p-seneca-grad" src="" alt="Seneca graduation" loading="lazy"><div class="ptov"><div class="ptlbl">Seneca Grad</div></div></div>
+            <div class="ptile"><img id="p-york-u" src="" alt="York University" loading="lazy"><div class="ptov"><div class="ptlbl">York U</div></div></div>
+            <div class="ptile"><img id="p-city" src="" alt="City moment" loading="lazy"><div class="ptov"><div class="ptlbl">City Moment</div></div></div>          </div>
+          <a href="https://www.instagram.com/helloitszil/" target="_blank" class="iglnk2">📸 More on Instagram — <strong style="color:var(--ac)">@helloitszil</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dv"></div>
+
+<section id="work" style="background:var(--white);padding:2.25rem 0">
+  <div class="sec fu">
+    <span class="stag">Portfolio</span>
+    <h2 class="stit">Brands I've Already Made Friends With</h2>
+    <p class="sint">Client campaigns, academic projects, and creative work — all real, all linked.</p>
+    <div class="mwrap" style="margin-bottom:2rem">
+      <div class="mtrack">
+        <div class="bchip"><div class="bdot"></div>Girnari Spices</div><div class="bchip"><div class="bdot"></div>Indian Salt</div><div class="bchip"><div class="bdot"></div>Arise International School</div><div class="bchip"><div class="bdot"></div>RB Amin</div><div class="bchip"><div class="bdot"></div>PureClean</div><div class="bchip"><div class="bdot"></div>October's Very Own</div><div class="bchip"><div class="bdot"></div>FocusPlay (Mattel)</div><div class="bchip"><div class="bdot"></div>Ela Handbags</div><div class="bchip"><div class="bdot"></div>Invisalign</div><div class="bchip"><div class="bdot"></div>QuickNish</div>
+        <div class="bchip"><div class="bdot"></div>Girnari Spices</div><div class="bchip"><div class="bdot"></div>Indian Salt</div><div class="bchip"><div class="bdot"></div>Arise International School</div><div class="bchip"><div class="bdot"></div>RB Amin</div><div class="bchip"><div class="bdot"></div>PureClean</div><div class="bchip"><div class="bdot"></div>October's Very Own</div><div class="bchip"><div class="bdot"></div>FocusPlay (Mattel)</div><div class="bchip"><div class="bdot"></div>Ela Handbags</div><div class="bchip"><div class="bdot"></div>Invisalign</div><div class="bchip"><div class="bdot"></div>QuickNish</div>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fv">
+        <div>
+          <div class="aflag">🎓 York University Academic Project · 2024</div>
+          <div class="fn">October's Very Own</div>
+          <div class="fsb">Google Ads PPC Campaign — OVO Classic Collection</div>
+        </div>
+        <div class="fbadges"><span class="fb">Google Ads</span><span class="fb">Keyword Research</span><span class="fb">Ad Copywriting</span><span class="fb">Landing Page</span><span class="fb">ROAS Planning</span></div>
+      </div>
+      <div class="fbdy">
+        <div>
+          <h4>What I built</h4>
+          <p>A full Google Ads PPC campaign for OVO's Classic Collection — two themed ad groups with 7 researched keywords each, 4 ad copy variations, a landing page mockup, and a complete budget and ROAS projection.</p>
+          <div class="fstats">
+            <div class="fst"><div class="fstl">Monthly budget</div><div class="fstv">$1,500</div></div>
+            <div class="fst"><div class="fstl">Projected ROAS</div><div class="fstv">1.33x</div></div>
+            <div class="fst"><div class="fstl">Ad groups</div><div class="fstv">2 × 7 keywords</div></div>
+            <div class="fst"><div class="fstl">Platform</div><div class="fstv">Google Ads</div></div>
+          </div>
+        </div>
+        <a href="https://zilusheth.wixsite.com/my-site" target="_blank" class="flnk">View Landing Page Mockup →</a>
+      </div>
+    </div>
+    <div class="wg stg">
+      <a class="wc" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_0f77033da8594af0ae222361e9a9a6f2.pdf" target="_blank"><div class="wi">🌶️</div><div class="wcat">Social Media · Client</div><div class="wtit">Girnari Spices — Content Calendar</div><p>Multi-month strategy — posts, themes, and scheduling built to grow an authentic community.</p><div class="wres">↑ Established client's first structured social presence</div><div class="wlnk">View Calendar →</div></a>
+      <a class="wc" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_256bf71b6a9f4be995f29ac274957f3a.pdf" target="_blank"><div class="wi">🍽️</div><div class="wcat">Social Media · Client</div><div class="wtit">Indian Salt — Restaurant Strategy</div><p>Two-phase content calendar — evolving strategy across campaign cycles.</p><div class="wres">↑ Two full campaign cycles, brand voice defined</div><div class="wlnk">View Calendar →</div></a>
+      <a class="wc" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_85629b38ce914db09797093748693077.pdf" target="_blank"><div class="wi">🎓</div><div class="wcat">Social Media · Client</div><div class="wtit">Arise International School</div><p>Education sector strategy — institutional credibility meets community warmth.</p><div class="wres">↑ Calendar adopted as client's ongoing posting framework</div><div class="wlnk">View Calendar →</div></a>
+      <a class="wc" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_b8893abb18cd4cd5a337eed16c2cdfa2.pdf" target="_blank"><div class="wi">✍️</div><div class="wcat">Content · York University</div><div class="wtit">Hootsuite Blog Strategy</div><p>Long-form blog with SEO intent, platform-awareness, and consistent brand voice.</p><div class="wres">↑ SEO-optimised long-form with keyword targeting</div><div class="wlnk">View Blog →</div></a>
+      <a class="wc" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_363ae1934c9145d285a1748f52fda880.pdf" target="_blank"><div class="wi">🔍</div><div class="wcat">SEO · York University</div><div class="wtit">Invisalign SEO Audit</div><p>HubSpot Website Grader audit — analysis and 5 optimization recommendations.</p><div class="wres">↑ Identified mobile UX gaps & schema markup opportunity</div><div class="wlnk">View Audit →</div></a>
+      <a class="wc" href="https://drive.google.com/file/d/1zfYsvRdUUVIUKeDX03PRbF9DkBwjoJRf/view?usp=sharing" target="_blank"><div class="wi">🎙️</div><div class="wcat">Podcast · Content Marketing</div><div class="wtit">Choosing Wisely — with Zil Sheth</div><p>Sustainable fashion myths debunked — with a real guest interview and social promo campaign.</p><div class="wres">↑ End-to-end: concept, script, production, social promo</div><div class="wlnk">Listen →</div></a>
+    </div>
+  </div>
+</section>
+
+<div class="dv"></div>
+
+<section id="experience" class="exsec" style="padding:2.25rem 0">
+  <div class="sec fu">
+    <p class="exlbl">E X P E R I E N C E</p>
+    <div class="er">
+      <div class="el"><div class="edt">Oct 2024 — Present</div><div class="ero">Communications<br>Coordinator</div></div>
+      <div><span class="eco">LANVAC Surveillance — Toronto, ON</span><p class="ebo">Managed ~120 daily client interactions, surfacing patterns in customer behaviour and feedback to inform communication improvements. Partnered across teams to maintain consistent messaging and alignment across all customer touchpoints. Translated recurring client concerns into process enhancements, improving response efficiency and overall customer experience. Tracked client communication records and status updates to support accountability and transparency across all touchpoints.</p><div class="etags"><span class="etag">Client Communications</span><span class="etag">Cross-Team Coordination</span><span class="etag">Process Improvement</span><span class="etag">Status Tracking</span></div></div>
+    </div>
+    <div class="er">
+      <div class="el"><div class="edt">Oct 2023 — Jan 2024</div><div class="ero">Order Fulfillment<br>Associate</div></div>
+      <div><span class="eco">Amazon Canada — Toronto, ON</span><p class="ebo">Executed high-volume order processing in a fast-paced environment, ensuring accuracy and timely fulfillment aligned with service expectations. Optimised operational efficiency by adhering to structured workflows under time-sensitive conditions. Coordinated with team members to ensure clear task execution and consistency across fulfillment processes. Elevated customer experience consistency by contributing to reliable, error-free order fulfillment processes.</p><div class="etags"><span class="etag">High-Volume Operations</span><span class="etag">Process Adherence</span><span class="etag">Team Coordination</span><span class="etag">Customer Experience</span></div></div>
+    </div>
+    <div class="er">
+      <div class="el"><div class="edt">Apr 2022 — Oct 2022</div><div class="ero">Marketing<br>Head</div></div>
+      <div><span class="eco">The Digistory Marketing Firm — Vadodara, IN</span><p class="ebo">Promoted from Content and Social Media Manager within 6 months after demonstrating ownership across all client accounts, with direct responsibility for an intern and full oversight of strategy and execution. Managed 6+ client accounts end-to-end including Girnari Spices, Indian Salt Restaurant, and Arise International School, overseeing content creation, calendar planning, social media posting, and client approvals. Spearheaded social media strategies that drove 25% growth in user engagement and 15% increase in brand recognition, and executed a content plan that boosted organic traffic by 20% and user retention by 30%. Partnered on creative campaigns improving conversion rates by 10%, and conducted outbound sales calls that expanded the client base and contributed to a 15% increase in agency revenue.</p><div class="etags"><span class="etag">Content Strategy</span><span class="etag">Social Media</span><span class="etag">Client Management</span><span class="etag">Team Lead</span></div></div>
+    </div>
+    <div class="er">
+      <div class="el"><div class="edt">Oct 2021 — Apr 2022</div><div class="ero">Content &<br>Social Media<br>Manager</div></div>
+      <div><span class="eco">The Digistory Marketing Firm — Vadodara, IN</span><p class="ebo">Spearheaded the agency’s first dedicated content hire and built social media and content frameworks across multiple client verticals from the ground up. Created and managed platform-specific content across Instagram, Facebook, and Google that established the agency’s content production process.</p><div class="etags"><span class="etag">Content Frameworks</span><span class="etag">Instagram</span><span class="etag">Facebook</span><span class="etag">Google</span></div></div>
+    </div>
+    <div class="er">
+      <div class="el"><div class="edt">Jan 2021 — Sep 2021</div><div class="ero">SEO Content<br>Writer</div></div>
+      <div><span class="eco">QuickNish — Vadodara, IN</span><p class="ebo">Applied keyword research and audience intent analysis to develop content strategies that increased organic traffic by 20% and improved search rankings by 15%. Analyzed performance data to refine content approach, growing social media engagement by 25% across accounts. Collaborated with clients to align content direction with brand objectives, ensuring tone consistency and on-time delivery across all accounts.</p><div class="etags"><span class="etag">SEO</span><span class="etag">Keyword Research</span><span class="etag">Copywriting</span><span class="etag">Client Collaboration</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="dv"></div>
+
+<section id="writing" class="wrsec">
+  <img id="img-writing" class="wrbg" src="" alt="">
+  <div class="wrov"></div>
+  <div class="wrin fu">
+    <span class="stag">Writing & Storytelling</span>
+    <h2 class="stit">Words That Do the Work</h2>
+    <p class="sint">Not every great idea starts in a boardroom — sometimes it starts in a Google Doc at 2AM.</p>
+    <div class="wrg stg">
+      <a class="wcard" href="https://zilsheth99.wixsite.com/zportfolio/blog" target="_blank"><div class="wcat">Travel Blog</div><div class="wtitle">My Niagara Falls Adventure</div><p>Red raincoats, wax museums, a sunset SkyWheel. First-person voice that makes readers feel like they're there.</p><div class="wlk">Read Post →</div></a>
+      <a class="wcard" href="https://zilsheth99.wixsite.com/zportfolio/blog" target="_blank"><div class="wcat">Sports Essay</div><div class="wtitle">From Bharatanatyam to Buzzer Beaters</div><p>How a dancer became a basketball player — and what sport taught her about showing up.</p><div class="wlk">Read Post →</div></a>
+      <a class="wcard" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_41a34beff98e47fbacdf4678671fedcb.pdf" target="_blank"><div class="wcat">Editorial · Lifestyle</div><div class="wtitle">Sustainable Fashion</div><p>The cost-per-wear argument, the myth of sacrifice, and why dressing ethically is actually a style upgrade.</p><div class="wlk">Read Article →</div></a>
+      <a class="wcard" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_907b5bce62c741c3a6f3ca4a2223f7f4.pdf" target="_blank"><div class="wcat">Short Fiction</div><div class="wtitle">Utopia</div><p>A reimagining of Omelas — questioning the true cost of a perfect world.</p><div class="wlk">Read Story →</div></a>
+      <a class="wcard" href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_2ac0e6cdf5c54c639bb1a3ad12db29d1.pdf" target="_blank"><div class="wcat">Short Fiction</div><div class="wtitle">Phoenix</div><p>The last human on a healing Earth. Quiet, lyrical, unexpectedly moving.</p><div class="wlk">Read Story →</div></a>
+      <a class="wcard" href="https://drive.google.com/file/d/1WFvXgZAjoBzVaTLWQ_O3p1LkcyOEToxR/view?usp=sharing" target="_blank"><div class="wcat">Social Copy</div><div class="wtitle">Choosing Wisely — Promo Post</div><p>Instagram caption for a podcast episode — conversational, sharp, hashtag-smart.</p><div class="wlk">View Post →</div></a>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="dv"></div>
+
+<section id="certs" style="background:var(--lp);padding:2.25rem 0 1.5rem">
+  <div class="sec fu">
+    <div class="certs-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+      <div>
+        <span class="stag">Certifications</span>
+        <h2 class="stit">Proof of the Work</h2>
+        <div class="crtg stg">
+          <div class="crtcard"><div class="crico">🏅</div><div><div class="crtnm">Marketing Hub Software</div><div class="crtis">HubSpot Academy · 2024–2025</div><a href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_c2e1f13aa0304706a16e782848b0a5df.pdf" target="_blank" class="crtlk">View →</a></div></div>
+          <div class="crtcard"><div class="crico">🏅</div><div><div class="crtnm">Social Media Marketing</div><div class="crtis">Hootsuite · 2024</div><a href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_913879c39b4f488fa4b7a67013b600f9.pdf" target="_blank" class="crtlk">View →</a></div></div>
+          <div class="crtcard"><div class="crico">🏅</div><div><div class="crtnm">Hootsuite Platform</div><div class="crtis">Hootsuite · 2024</div><a href="https://db0f85a7-cfc2-43ac-90c0-fc179648e8f6.filesusr.com/ugd/d4c6ae_6bb91fd9d580489e8914d351ddf36fa5.pdf" target="_blank" class="crtlk">View →</a></div></div>
+          <div class="crtcard"><div class="crico">🎓</div><div><div class="crtnm">Content & Digital Marketing</div><div class="crtis">York University · Post-Graduate Certificate · 2024</div><a href="grad-letter.pdf" target="_blank" class="crtlk">View Letter →</a></div></div>
+          <div class="crtcard"><div class="crico">🎓</div><div><div class="crtnm">Business Analytics</div><div class="crtis">Seneca College · Ontario College Graduate Certificate · 2023</div><a href="grad-letter.pdf" target="_blank" class="crtlk">View Letter →</a></div></div>
+        </div>
+      </div>
+      <div>
+        <span class="stag">Toolkit</span>
+        <h2 class="stit">What I Bring to the Table</h2>
+        <div class="skg stg" style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem">
+          <div class="skc"><div class="skico">📱</div><div class="skt">Social Media</div><p>Calendars, Meta Business Suite, Hootsuite, community building.</p></div>
+          <div class="skc"><div class="skico">🔍</div><div class="skt">SEO & Google Ads</div><p>Keyword research, PPC, Google Analytics, HubSpot audits.</p></div>
+          <div class="skc"><div class="skico">⚙️</div><div class="skt">HubSpot CRM</div><p>Landing pages, drip campaigns, workflow automation.</p></div>
+          <div class="skc"><div class="skico">🎯</div><div class="skt">Campaign Planning</div><p>Full-funnel strategy, A/B testing, launch timelines, budgets.</p></div>
+          <div class="skc"><div class="skico">✍️</div><div class="skt">Copywriting</div><p>Brand voice, social copy, SEO content, storytelling.</p></div>
+          <div class="skc"><div class="skico">📊</div><div class="skt">Analytics</div><p>Google Analytics, reporting, data viz, consumer research.</p></div>
+          <div class="skc"><div class="skico">🎨</div><div class="skt">Creative Tools</div><p>Canva, Excel, Google Workspace, Meta Business Suite.</p></div>
+          <div class="skc"><div class="skico">🧠</div><div class="skt">AI Fluency</div><p>Claude/Anthropic AI, prompt engineering, AI-assisted ideation.</p></div>
+        </div>
+        <div class="langs">
+          <div class="lang">🇬🇧 English — Fluent</div>
+          <div class="lang">🇮🇳 Hindi — Fluent</div>
+          <div class="lang">🇮🇳 Gujarati — Native</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="ctsec">
+  <img id="img-contact" class="ctbg" src="" alt="">
+  <div class="ctov"></div>
+  <div style="position:relative;z-index:1;padding:2.75rem 2.5rem;max-width:1200px;margin:0 auto;width:100%">
+
+    <!-- Heading -->
+    <div style="margin-bottom:2rem">
+      <span class="stag" style="color:rgba(196,174,237,.85);display:block;text-align:center">Reach Out</span>
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-.02em;color:#fff;margin:.35rem 0 .6rem;text-align:center">Let's Connect</h2>
+      <div style="display:flex;justify-content:center"><span style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:.4rem 1.1rem;font-family:var(--fb);font-size:.8rem;color:rgba(255,255,255,.9)"><span style="width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;display:inline-block"></span>Currently seeking opportunities in Toronto</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:start">
+
+      <!-- LEFT: Form -->
+      <div style="background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:2rem">
+        <h3 style="font-family:var(--fd);font-size:1.2rem;color:#fff;margin-bottom:.3rem">Send me a message</h3>
+        <p style="font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1.5rem">If you made it this far, we should probably connect — coffee's on me.</p>
+        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem">
+          <div>
+            <label style="font-family:var(--fb);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:.35rem">Full Name</label>
+            <input id="contact-name" name="name" type="text" placeholder="Your name" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:8px;padding:.68rem .9rem;font-family:var(--fb);font-size:.82rem;color:#fff;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='rgba(196,174,237,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.11)'">
+          </div>
+          <div>
+            <label style="font-family:var(--fb);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:.35rem">Email Address</label>
+            <input id="contact-email" name="email" type="email" placeholder="hello@example.com" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:8px;padding:.68rem .9rem;font-family:var(--fb);font-size:.82rem;color:#fff;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='rgba(196,174,237,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.11)'">
+          </div>
+        </div>
+        <div style="margin-bottom:.85rem">
+          <label style="font-family:var(--fb);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:.35rem">Subject</label>
+          <input id="contact-subject" name="subject" type="text" placeholder="What's on your mind?" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:8px;padding:.68rem .9rem;font-family:var(--fb);font-size:.82rem;color:#fff;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='rgba(196,174,237,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.11)'">
+        </div>
+        <div style="margin-bottom:1.35rem">
+          <label style="font-family:var(--fb);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:.35rem">Message</label>
+          <textarea id="contact-message" name="message" placeholder="Tell me about your project or just say hi..." rows="5" required style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:8px;padding:.68rem .9rem;font-family:var(--fb);font-size:.82rem;color:#fff;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='rgba(196,174,237,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.11)'"></textarea>
+        </div>
+        <button id="contact-submit" type="button" style="display:inline-flex;align-items:center;gap:.55rem;background:var(--ac);color:#fff;padding:.82rem 1.9rem;border-radius:100px;font-family:var(--fb);font-size:.82rem;font-weight:500;text-decoration:none;transition:background .2s;border:none;cursor:pointer" onmouseover="this.style.background='#8b5fbf'" onmouseout="this.style.background='var(--ac)'">Send Message &rarr;</button>
+      </div>
+
+      <!-- RIGHT: Details + Social + Map -->
+      <div style="display:flex;flex-direction:column;gap:1.1rem">
+
+        <!-- Contact Details -->
+        <div style="background:rgba(255,255,255,.09);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:1.5rem">
+          <h3 style="font-family:var(--fd);font-size:1.1rem;color:#fff;margin-bottom:1rem">Contact Details</h3>
+          <div style="display:flex;flex-direction:column;gap:.85rem">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,63,160,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0">✉️</div>
+              <div>
+                <div style="font-family:var(--fb);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)">Email me</div>
+                <a href="mailto:zilsheth99@gmail.com" style="font-family:var(--fb);font-size:.82rem;color:#fff;text-decoration:none">zilsheth99@gmail.com</a>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(107,63,160,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0">📍</div>
+              <div>
+                <div style="font-family:var(--fb);font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)">Location</div>
+                <span style="font-family:var(--fb);font-size:.82rem;color:#fff">Toronto, Ontario 🇨🇦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div style="background:rgba(255,255,255,.09);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:1.5rem">
+          <h3 style="font-family:var(--fd);font-size:1.1rem;color:#fff;margin-bottom:.9rem">Let's be social</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem">
+            <a href="https://www.linkedin.com/in/zil-sheth-49767a95" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M7.75 9.5h-2.5v8h2.5v-8zm-1.25-4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm10 4c-1.2 0-2 .6-2.3 1.2V9.5H11.5v8h2.7v-4.3c0-1.1.6-1.8 1.5-1.8.9 0 1.3.7 1.3 1.8v4.3H19.7V13c0-2.2-1.1-3.5-3.2-3.5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">LinkedIn</span></a>
+            <a href="https://www.instagram.com/helloitszil/" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><defs><radialGradient id="ig-rg" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig-rg)"/><path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 7.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.7-8.1a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1zM12 4c-2.17 0-2.44.01-3.3.05C5.58 4.2 4.2 5.58 4.05 8.7 4.01 9.56 4 9.83 4 12s.01 2.44.05 3.3c.15 3.12 1.53 4.5 4.65 4.65.86.04 1.13.05 3.3.05s2.44-.01 3.3-.05c3.12-.15 4.5-1.53 4.65-4.65.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3C19.8 5.58 18.42 4.2 15.3 4.05 14.44 4.01 14.17 4 12 4zm0 1.44c2.13 0 2.39.01 3.23.05 2.16.1 3.17 1.13 3.27 3.27.04.84.05 1.1.05 3.24s-.01 2.4-.05 3.23c-.1 2.14-1.11 3.17-3.27 3.27-.84.04-1.1.05-3.23.05s-2.39-.01-3.23-.05C6.61 18.4 5.6 17.37 5.5 15.23c-.04-.83-.05-1.09-.05-3.23s.01-2.4.05-3.23C5.6 6.63 6.61 5.6 8.77 5.5c.84-.04 1.1-.05 3.23-.05z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">Instagram</span></a>
+            <a href="https://www.tiktok.com/@thegirlwhohadamole" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#010101"/><path d="M19.6 8.2a5.1 5.1 0 0 1-3-1.8V15a4.6 4.6 0 1 1-3.8-4.5v2.5a2.1 2.1 0 1 0 1.3 2V4h2.5a5.1 5.1 0 0 0 3 3.7v.5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">TikTok</span></a>
+            <a href="mailto:zilsheth99@gmail.com" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="rgba(107,63,160,.85)"/><path d="M4 8l8 5 8-5v9H4V8zm0-2h16l-8 5-8-5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">Email</span></a>
+          </div>
+        </div>
+
+        <!-- Animated world map with Toronto pin -->
+        <div style="background:rgba(10,8,20,.6);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;position:relative;height:175px">
+          <!-- SVG world map -->
+          <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:.55">
+            <!-- Simplified world landmasses -->
+            <!-- North America -->
+            <path d="M95,85 L145,70 L200,75 L230,90 L245,110 L240,140 L220,165 L195,180 L170,200 L150,225 L130,245 L115,260 L100,250 L85,230 L75,205 L70,175 L75,145 L85,115 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- Greenland -->
+            <path d="M210,45 L240,40 L260,50 L255,70 L235,75 L215,68 Z" fill="#6B3FA0" opacity=".5"/>
+            <!-- South America -->
+            <path d="M175,265 L200,255 L225,265 L235,290 L230,320 L215,345 L195,360 L175,350 L160,325 L158,295 L165,275 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- Europe -->
+            <path d="M415,75 L445,68 L470,72 L480,85 L475,100 L460,110 L440,115 L420,108 L410,95 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- Africa -->
+            <path d="M420,120 L455,115 L480,125 L490,150 L488,185 L475,215 L455,235 L430,240 L410,228 L400,200 L398,168 L405,140 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- Asia -->
+            <path d="M490,65 L560,58 L630,62 L680,75 L710,90 L720,115 L700,140 L665,155 L620,160 L570,155 L530,145 L500,130 L485,110 L488,85 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- India -->
+            <path d="M570,150 L595,145 L610,160 L605,185 L590,200 L572,195 L560,175 L562,158 Z" fill="#6B3FA0" opacity=".6"/>
+            <!-- Australia -->
+            <path d="M660,230 L705,220 L735,228 L745,255 L735,278 L710,288 L678,282 L660,260 L655,240 Z" fill="#6B3FA0" opacity=".7"/>
+            <!-- Japan -->
+            <path d="M710,95 L720,90 L730,98 L725,110 L714,112 Z" fill="#6B3FA0" opacity=".6"/>
+            <!-- UK -->
+            <path d="M405,75 L415,70 L420,80 L412,88 L405,83 Z" fill="#6B3FA0" opacity=".6"/>
+            <!-- Scandinavia -->
+            <path d="M430,52 L450,45 L462,55 L458,70 L445,72 L432,65 Z" fill="#6B3FA0" opacity=".5"/>
+            <!-- SE Asia -->
+            <path d="M660,160 L685,155 L700,165 L698,180 L680,185 L662,178 Z" fill="#6B3FA0" opacity=".6"/>
+            <!-- Grid lines -->
+            <line x1="0" y1="225" x2="900" y2="225" stroke="rgba(107,63,160,.2)" stroke-width=".5"/>
+            <line x1="450" y1="0" x2="450" y2="450" stroke="rgba(107,63,160,.2)" stroke-width=".5"/>
+            <ellipse cx="450" cy="225" rx="420" ry="200" fill="none" stroke="rgba(107,63,160,.12)" stroke-width=".5"/>
+            <ellipse cx="450" cy="225" rx="280" ry="200" fill="none" stroke="rgba(107,63,160,.1)" stroke-width=".5"/>
+            <ellipse cx="450" cy="225" rx="140" ry="200" fill="none" stroke="rgba(107,63,160,.1)" stroke-width=".5"/>
+          </svg>
+          <!-- Toronto pin — approx coordinates on the map -->
+          <div style="position:absolute;top:38%;left:22%;transform:translate(-50%,-100%)">
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center">
+              <!-- Pulse rings -->
+              <div style="position:absolute;width:28px;height:28px;border-radius:50%;background:rgba(107,63,160,.3);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse-ring 2s ease-out infinite"></div>
+              <div style="position:absolute;width:42px;height:42px;border-radius:50%;background:rgba(107,63,160,.15);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse-ring 2s ease-out infinite .4s"></div>
+              <!-- Pin dot -->
+              <div style="width:10px;height:10px;border-radius:50%;background:#C4AEED;border:2px solid #fff;position:relative;z-index:2;box-shadow:0 0 8px rgba(196,174,237,.8)"></div>
+              <!-- Label -->
+              <div style="margin-top:5px;background:rgba(107,63,160,.85);backdrop-filter:blur(8px);border:1px solid rgba(196,174,237,.4);border-radius:6px;padding:.2rem .5rem;white-space:nowrap;font-family:var(--fb);font-size:.58rem;color:#fff;font-weight:500">📍 Toronto, ON</div>
+            </div>
+          </div>
+          <!-- Origin pin — India -->
+          <div style="position:absolute;top:44%;left:63%;transform:translate(-50%,-100%)">
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center">
+              <div style="width:7px;height:7px;border-radius:50%;background:rgba(196,174,237,.6);border:1.5px solid rgba(255,255,255,.5);position:relative;z-index:2"></div>
+              <div style="margin-top:4px;background:rgba(20,16,32,.7);border:1px solid rgba(196,174,237,.25);border-radius:5px;padding:.15rem .4rem;white-space:nowrap;font-family:var(--fb);font-size:.52rem;color:rgba(255,255,255,.65)">🇮🇳 India</div>
+            </div>
+          </div>
+          <!-- Animated travel line between India and Toronto -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M63,44 Q42,20 22,38" fill="none" stroke="rgba(196,174,237,.35)" stroke-width=".4" stroke-dasharray="2,2"/>
+            <circle r="1" fill="rgba(196,174,237,.8)">
+              <animateMotion dur="4s" repeatCount="indefinite" path="M63,44 Q42,20 22,38"/>
+            </circle>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Zil Sheth — Built with curiosity, caffeine, and a lot of marketing ideas.</span>
+  <div class="fl" style="gap:1rem">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/zil-sheth-49767a95" target="_blank" class="ft-ico">
+      <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="currentColor"/><path d="M7.75 9.5h-2.5v8h2.5v-8zm-1.25-4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm10 4c-1.2 0-2 .6-2.3 1.2V9.5H11.5v8h2.7v-4.3c0-1.1.6-1.8 1.5-1.8.9 0 1.3.7 1.3 1.8v4.3H19.7V13c0-2.2-1.1-3.5-3.2-3.5z" fill="#fff"/></svg>
+    </a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/helloitszil/" target="_blank" class="ft-ico">
+      <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="5" fill="currentColor"/><path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 7.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.7-8.1a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1zM12 4c-2.17 0-2.44.01-3.3.05C5.58 4.2 4.2 5.58 4.05 8.7 4.01 9.56 4 9.83 4 12s.01 2.44.05 3.3c.15 3.12 1.53 4.5 4.65 4.65.86.04 1.13.05 3.3.05s2.44-.01 3.3-.05c3.12-.15 4.5-1.53 4.65-4.65.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3C19.8 5.58 18.42 4.2 15.3 4.05 14.44 4.01 14.17 4 12 4zm0 1.44c2.13 0 2.39.01 3.23.05 2.16.1 3.17 1.13 3.27 3.27.04.84.05 1.1.05 3.24s-.01 2.4-.05 3.23c-.1 2.14-1.11 3.17-3.27 3.27-.84.04-1.1.05-3.23.05s-2.39-.01-3.23-.05C6.61 18.4 5.6 17.37 5.5 15.23c-.04-.83-.05-1.09-.05-3.23s.01-2.4.05-3.23C5.6 6.63 6.61 5.6 8.77 5.5c.84-.04 1.1-.05 3.23-.05z" fill="#fff"/></svg>
+    </a>
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@thegirlwhohadamole" target="_blank" class="ft-ico">
+      <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="currentColor"/><path d="M19.6 8.2a5.1 5.1 0 0 1-3-1.8V15a4.6 4.6 0 1 1-3.8-4.5v2.5a2.1 2.1 0 1 0 1.3 2V4h2.5a5.1 5.1 0 0 0 3 3.7v.5z" fill="#fff"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+const P={
+  "hero_art": "assets/photos/hero_art.jpg",
+  "egypt": "assets/photos/egypt.jpg",
+  "sunrise": "assets/photos/sunrise.jpg",
+  "baby": "assets/photos/baby.jpg",
+  "city": "assets/photos/city.jpg",
+  "portrait": "assets/photos/portrait.jpg",
+  "blue_mountain": "assets/photos/blue mountain.jpeg",
+  "fictional_bf": "assets/photos/fictional bf.jpeg",
+  "museum": "assets/photos/museum of illusions.jpeg",
+  "niagara": "assets/photos/niagara.jpeg",
+  "perfect_timing": "assets/photos/perfect timing.jpeg",
+  "rainbow": "assets/photos/rainbow.jpeg",
+  "school_merch": "assets/photos/school merch.jpg",
+  "seas_the_day": "assets/photos/seas the day.jpg",
+  "seneca_grad": "assets/photos/seneca grad.jpeg",
+  "skywheel": "assets/photos/skywheel.jpeg",
+  "toronto": "assets/photos/toronto.jpeg",
+  "york_u": "assets/photos/york u.jpg",
+  "lego_project": "assets/photos/lego project.jpg"
+};
+const setSrc=(id,src)=>{const el=document.getElementById(id);if(el)el.src=src;};
+setSrc('img-writing',P.egypt);
+setSrc('img-contact',P.sunrise);
+setSrc('p-portrait',P.portrait);
+setSrc('p-baby',P.baby);
+setSrc('p-toronto',P.toronto);
+setSrc('p-sunrise',P.sunrise);
+setSrc('p-egypt',P.egypt);
+setSrc('p-niagara',P.niagara);
+setSrc('p-skywheel',P.skywheel);
+setSrc('p-blue-mountain',P.blue_mountain);
+setSrc('p-museum',P.museum);
+setSrc('p-fictional-bf',P.fictional_bf);
+setSrc('p-perfect-timing',P.perfect_timing);
+setSrc('p-rainbow',P.rainbow);
+setSrc('p-seas-the-day',P.seas_the_day);
+setSrc('p-school-merch',P.school_merch);
+setSrc('p-lego-project',P.lego_project);
+setSrc('p-seneca-grad',P.seneca_grad);
+setSrc('p-york-u',P.york_u);
+setSrc('p-city',P.city);
+
+const contactButton=document.getElementById('contact-submit');
+if(contactButton){
+  contactButton.addEventListener('click',()=>{
+    const name=document.getElementById('contact-name')?.value.trim()||'';
+    const email=document.getElementById('contact-email')?.value.trim()||'';
+    const subject=document.getElementById('contact-subject')?.value.trim()||'Portfolio message';
+    const message=document.getElementById('contact-message')?.value.trim()||'';
+    if(!name||!email||!subject||!message){
+      alert('Please fill out all the message fields first.');
+      return;
+    }
+    const body=`Name: ${name}\nEmail: ${email}\n\n${message}`;
+    window.location.href=`mailto:zilsheth99@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
+const obs=new IntersectionObserver(els=>{
+  els.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fu,.stg').forEach(el=>obs.observe(el));
+
+const nums=document.querySelectorAll('.sn[data-target]');
+const cobs=new IntersectionObserver(els=>{
+  els.forEach(el=>{
+    if(!el.isIntersecting)return;
+    const t=+el.target.dataset.target;
+    el.target.textContent='0';
+    let v=0;
+    const inc=Math.max(1,Math.ceil(t/60));
+    const timer=setInterval(()=>{
+      v=Math.min(v+inc,t);
+      el.target.textContent=v;
+      if(v>=t){el.target.textContent=t;clearInterval(timer);}
+    },20);
+    cobs.unobserve(el.target);
+  });
+},{threshold:0.2,rootMargin:'0px 0px -50px 0px'});
+nums.forEach(n=>cobs.observe(n));
+</script>
+<style>
+@keyframes pulse-ring {
+  0%{transform:translate(-50%,-50%) scale(.6);opacity:.8}
+  100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}
+}
+</style>
+</body>
+</html>
