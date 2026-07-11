@@ -200,6 +200,7 @@ footer{background:var(--lp);border-top:1px solid var(--bd);color:var(--ink2);pad
 footer a{color:var(--ink2);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--ac)}
 .fl{display:flex;gap:1.3rem}.ft-ico{color:var(--ink2);transition:color .2s;display:flex;align-items:center}.ft-ico:hover{color:var(--ac)}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
 .floating-cta{position:fixed;right:1.35rem;bottom:1.35rem;z-index:250;display:flex;align-items:center;gap:.65rem;background:rgba(107,63,160,.94);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 34px rgba(20,16,32,.22);border-radius:999px;padding:.75rem 1.05rem .75rem 1.2rem;font-family:var(--fb);opacity:0;pointer-events:none;transform:translateY(14px);transition:opacity .22s ease,transform .22s ease,background .2s ease}
 .floating-cta.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .floating-cta:hover{background:var(--ac2);transform:translateY(-2px)}
@@ -283,6 +284,7 @@ footer a:hover{color:var(--ac)}
   .pill,.pill.n{font-size:.65rem;padding:.22rem .6rem}
   .me-card{padding:.85rem .9rem}
   .me-fact div{font-size:.75rem}
+  .social-grid{grid-template-columns:1fr}
   .floating-cta{left:1rem;right:1rem;justify-content:center;padding:.78rem 1rem}
   .floating-cta small{display:none}
 }
@@ -636,11 +638,10 @@ footer a:hover{color:var(--ac)}
         <!-- Social -->
         <div style="background:rgba(255,255,255,.09);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:1.5rem">
           <h3 style="font-family:var(--fd);font-size:1.1rem;color:#fff;margin-bottom:.9rem">Let's be social</h3>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem">
-            <a href="https://www.linkedin.com/in/zil-sheth-49767a95" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M7.75 9.5h-2.5v8h2.5v-8zm-1.25-4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm10 4c-1.2 0-2 .6-2.3 1.2V9.5H11.5v8h2.7v-4.3c0-1.1.6-1.8 1.5-1.8.9 0 1.3.7 1.3 1.8v4.3H19.7V13c0-2.2-1.1-3.5-3.2-3.5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">LinkedIn</span></a>
+          <div class="social-grid">
+            <a href="https://www.linkedin.com/in/zil-s-49767a95/" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M7.75 9.5h-2.5v8h2.5v-8zm-1.25-4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm10 4c-1.2 0-2 .6-2.3 1.2V9.5H11.5v8h2.7v-4.3c0-1.1.6-1.8 1.5-1.8.9 0 1.3.7 1.3 1.8v4.3H19.7V13c0-2.2-1.1-3.5-3.2-3.5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">LinkedIn</span></a>
             <a href="https://www.instagram.com/helloitszil/" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><defs><radialGradient id="ig-rg" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig-rg)"/><path d="M12 7.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 7.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.7-8.1a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1zM12 4c-2.17 0-2.44.01-3.3.05C5.58 4.2 4.2 5.58 4.05 8.7 4.01 9.56 4 9.83 4 12s.01 2.44.05 3.3c.15 3.12 1.53 4.5 4.65 4.65.86.04 1.13.05 3.3.05s2.44-.01 3.3-.05c3.12-.15 4.5-1.53 4.65-4.65.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3C19.8 5.58 18.42 4.2 15.3 4.05 14.44 4.01 14.17 4 12 4zm0 1.44c2.13 0 2.39.01 3.23.05 2.16.1 3.17 1.13 3.27 3.27.04.84.05 1.1.05 3.24s-.01 2.4-.05 3.23c-.1 2.14-1.11 3.17-3.27 3.27-.84.04-1.1.05-3.23.05s-2.39-.01-3.23-.05C6.61 18.4 5.6 17.37 5.5 15.23c-.04-.83-.05-1.09-.05-3.23s.01-2.4.05-3.23C5.6 6.63 6.61 5.6 8.77 5.5c.84-.04 1.1-.05 3.23-.05z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">Instagram</span></a>
             <a href="https://www.tiktok.com/@thegirlwhohadamole" target="_blank" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#010101"/><path d="M19.6 8.2a5.1 5.1 0 0 1-3-1.8V15a4.6 4.6 0 1 1-3.8-4.5v2.5a2.1 2.1 0 1 0 1.3 2V4h2.5a5.1 5.1 0 0 0 3 3.7v.5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">TikTok</span></a>
-            <a href="mailto:zilsheth99@gmail.com" style="display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:.65rem .9rem;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="rgba(107,63,160,.85)"/><path d="M4 8l8 5 8-5v9H4V8zm0-2h16l-8 5-8-5z" fill="white"/></svg><span style="font-family:var(--fb);font-size:.76rem;font-weight:500;color:#fff">Email</span></a>
           </div>
         </div>
 
@@ -717,7 +718,7 @@ footer a:hover{color:var(--ac)}
   <span>© 2026 Zil Sheth — Built with curiosity, caffeine, and a lot of marketing ideas.</span>
   <div class="fl" style="gap:1rem">
     <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/zil-sheth-49767a95" target="_blank" class="ft-ico">
+    <a href="https://www.linkedin.com/in/zil-s-49767a95/" target="_blank" class="ft-ico">
       <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="currentColor"/><path d="M7.75 9.5h-2.5v8h2.5v-8zm-1.25-4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm10 4c-1.2 0-2 .6-2.3 1.2V9.5H11.5v8h2.7v-4.3c0-1.1.6-1.8 1.5-1.8.9 0 1.3.7 1.3 1.8v4.3H19.7V13c0-2.2-1.1-3.5-3.2-3.5z" fill="#fff"/></svg>
     </a>
     <!-- Instagram -->
