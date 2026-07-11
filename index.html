@@ -177,6 +177,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .skico{font-size:1.15rem;margin-bottom:.48rem}
 .skt{font-family:var(--fd);font-size:.92rem;margin-bottom:.28rem;color:var(--ink)}
 .skc p{font-family:var(--fb);font-size:.73rem;color:var(--ink2);line-height:1.58}
+.mobile-trim{display:block}
 .langs{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.25rem}
 .lang{background:var(--ls);border:1px solid var(--lm);padding:.38rem .9rem;border-radius:100px;font-family:var(--fb);font-size:.74rem;color:var(--ac)}
 .ctsec{position:relative;overflow:hidden;padding-bottom:1.5rem}
@@ -279,6 +280,10 @@ footer a:hover{color:var(--ac)}
   .fc{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr !important;gap:1.5rem !important}
   .crtg{grid-template-columns:1fr}
+  #certs{padding-bottom:.65rem!important}
+  #certs .sec{padding-bottom:.75rem!important}
+  .mobile-trim{display:none}
+  .langs{margin-top:.85rem;gap:.5rem}
   .ctin{grid-template-columns:1fr;gap:1.5rem}
   .contact-shell{padding:1.5rem 1rem 5.25rem!important}
   .contact-grid{grid-template-columns:1fr!important;gap:1rem!important}
@@ -578,8 +583,8 @@ footer a:hover{color:var(--ac)}
           <div class="skc"><div class="skico">🎯</div><div class="skt">Campaign Planning</div><p>Full-funnel strategy, A/B testing, launch timelines, budgets.</p></div>
           <div class="skc"><div class="skico">✍️</div><div class="skt">Copywriting</div><p>Brand voice, social copy, SEO content, storytelling.</p></div>
           <div class="skc"><div class="skico">📊</div><div class="skt">Analytics</div><p>Google Analytics, reporting, data viz, consumer research.</p></div>
-          <div class="skc"><div class="skico">🎨</div><div class="skt">Creative Tools</div><p>Canva, Excel, Google Workspace, Meta Business Suite.</p></div>
-          <div class="skc"><div class="skico">🧠</div><div class="skt">AI Fluency</div><p>Claude/Anthropic AI, prompt engineering, AI-assisted ideation.</p></div>
+          <div class="skc mobile-trim"><div class="skico">🎨</div><div class="skt">Creative Tools</div><p>Canva, Excel, Google Workspace, Meta Business Suite.</p></div>
+          <div class="skc mobile-trim"><div class="skico">🧠</div><div class="skt">AI Fluency</div><p>Claude/Anthropic AI, prompt engineering, AI-assisted ideation.</p></div>
         </div>
         <div class="langs">
           <div class="lang">🇬🇧 English — Fluent</div>
@@ -842,7 +847,7 @@ const contactSection=document.getElementById('contact');
 if(floatingCta&&heroSection){
   const toggleFloatingCta=()=>{
     const heroBottom=heroSection.offsetTop+heroSection.offsetHeight;
-    const beforeContact=!contactSection||window.scrollY<contactSection.offsetTop-180;
+    const beforeContact=!contactSection||window.scrollY+window.innerHeight<contactSection.offsetTop+80;
     floatingCta.classList.toggle('show',window.scrollY>heroBottom-120&&beforeContact);
   };
   toggleFloatingCta();
