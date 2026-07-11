@@ -200,6 +200,12 @@ footer{background:var(--lp);border-top:1px solid var(--bd);color:var(--ink2);pad
 footer a{color:var(--ink2);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--ac)}
 .fl{display:flex;gap:1.3rem}.ft-ico{color:var(--ink2);transition:color .2s;display:flex;align-items:center}.ft-ico:hover{color:var(--ac)}
+.floating-cta{position:fixed;right:1.35rem;bottom:1.35rem;z-index:250;display:flex;align-items:center;gap:.65rem;background:rgba(107,63,160,.94);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 34px rgba(20,16,32,.22);border-radius:999px;padding:.75rem 1.05rem .75rem 1.2rem;font-family:var(--fb);opacity:0;pointer-events:none;transform:translateY(14px);transition:opacity .22s ease,transform .22s ease,background .2s ease}
+.floating-cta.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.floating-cta:hover{background:var(--ac2);transform:translateY(-2px)}
+.floating-cta span{font-size:.82rem;font-weight:600;letter-spacing:.01em;line-height:1}
+.floating-cta small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);line-height:1}
+.floating-cta .cta-arrow{width:25px;height:25px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
 
 ..about-photos{
   margin-top:.1rem;
@@ -250,6 +256,7 @@ footer a:hover{color:var(--ac)}
   .fv{min-height:200px;padding:1.5rem}
   .fbdy{padding:1.25rem}
   footer{flex-direction:column;gap:.6rem;text-align:center}
+  .floating-cta{right:1rem;bottom:1rem}
 }
 
 @media(max-width:600px){
@@ -276,6 +283,8 @@ footer a:hover{color:var(--ac)}
   .pill,.pill.n{font-size:.65rem;padding:.22rem .6rem}
   .me-card{padding:.85rem .9rem}
   .me-fact div{font-size:.75rem}
+  .floating-cta{left:1rem;right:1rem;justify-content:center;padding:.78rem 1rem}
+  .floating-cta small{display:none}
 }
 </style>
 </head>
@@ -292,6 +301,11 @@ footer a:hover{color:var(--ac)}
     <li><a href="#contact" class="np">Let's Talk</a></li>
   </ul>
 </nav>
+<a href="#contact" class="floating-cta" id="floating-cta" aria-label="Jump to contact section">
+  <span>Let's Talk</span>
+  <small>Open to work</small>
+  <span class="cta-arrow">→</span>
+</a>
 
 <section class="hero" id="hero" style="padding-top:60px;padding-bottom:0">
   <div class="hl">
@@ -779,6 +793,18 @@ const obs=new IntersectionObserver(els=>{
   els.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.fu,.stg').forEach(el=>obs.observe(el));
+
+const floatingCta=document.getElementById('floating-cta');
+const heroSection=document.getElementById('hero');
+if(floatingCta&&heroSection){
+  const toggleFloatingCta=()=>{
+    const heroBottom=heroSection.offsetTop+heroSection.offsetHeight;
+    floatingCta.classList.toggle('show',window.scrollY>heroBottom-120);
+  };
+  toggleFloatingCta();
+  window.addEventListener('scroll',toggleFloatingCta,{passive:true});
+  window.addEventListener('resize',toggleFloatingCta);
+}
 
 const nums=document.querySelectorAll('.sn[data-target]');
 const cobs=new IntersectionObserver(els=>{
