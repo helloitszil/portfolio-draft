@@ -75,6 +75,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .stit{font-family:var(--fd);font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:.85rem}
 .sint{font-family:var(--fb);font-size:.93rem;color:var(--ink2);max-width:580px;margin-bottom:2.5rem;line-height:1.85}
 .dv{height:1px;background:var(--bd)}
+.about-main{grid-column:1/-1;max-width:980px;margin:0 auto}
+.lens-section{background:var(--bg);padding:1.5rem 0 2.25rem}
+.lens-details{border:1px solid var(--bd);border-radius:18px;background:linear-gradient(180deg,var(--white) 0%,#faf6ff 100%);box-shadow:0 10px 28px rgba(107,63,160,.06);overflow:hidden}
+.lens-summary{list-style:none;cursor:pointer;padding:1.25rem 1.35rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.lens-summary::-webkit-details-marker{display:none}
+.lens-summary h2{font-family:var(--fd);font-size:1.55rem;color:var(--ink);margin:.1rem 0 .2rem}
+.lens-summary p{font-family:var(--fb);font-size:.82rem;color:var(--ink2);line-height:1.65;margin:0;max-width:560px}
+.lens-toggle{font-family:var(--fb);font-size:.72rem;font-weight:600;color:var(--ac);background:var(--lp);border:1px solid var(--lm);border-radius:999px;padding:.55rem .9rem;white-space:nowrap}
+.lens-details[open] .lens-toggle::after{content:' ↑'}
+.lens-details:not([open]) .lens-toggle::after{content:' ↓'}
+.lens-content{padding:0 1.35rem 1.35rem}
 .ag{display:grid;grid-template-columns:1.08fr .92fr;gap:2.6rem;align-items:start}
 .ab p{font-family:var(--fb);font-size:.88rem;color:var(--ink2);margin-bottom:.65rem;line-height:1.75;text-align:justify}
 .ab p strong{color:var(--ink);font-weight:500}
@@ -227,7 +238,7 @@ footer a:hover{color:var(--ac)}
 .floating-cta small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68);line-height:1}
 .floating-cta .cta-arrow{width:25px;height:25px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
 
-..about-photos{
+.about-photos{
   margin-top:.1rem;
   display:flex;
   flex-direction:column;
@@ -314,6 +325,8 @@ footer a:hover{color:var(--ac)}
   .social-grid{grid-template-columns:1fr}
   .floating-cta{left:1rem;right:1rem;justify-content:center;padding:.78rem 1rem}
   .floating-cta small{display:none}
+  .lens-summary{align-items:flex-start;flex-direction:column}
+  .lens-toggle{width:100%;text-align:center}
 }
 </style>
 </head>
@@ -375,7 +388,7 @@ footer a:hover{color:var(--ac)}
 <section id="about" style="background:var(--bg);padding:2.25rem 0">
   <div class="sec fu">
     <div class="ag">
-      <div class="ab">
+      <div class="ab about-main">
         <span class="stag">About Me</span>
         <h2 class="stit">Hello and welcome!</h2>
         <p>This is the digital corner of Zil Sheth — marketer, writer, and storyteller.</p>
@@ -421,44 +434,7 @@ footer a:hover{color:var(--ac)}
           </div>
 
         </div>
-      </div>
-
-      <div class="aside stg">
-        <div id="photos" class="about-photos" style="background:transparent;border:none;box-shadow:none;padding:.5rem 0">
-          <div style="margin-bottom:.85rem">
-            <div class="aph-kicker">Photography</div>
-            <h3 class="aph-title">Through My Lens</h3>
-          </div>
-                    <div class="iphgrid lens-grid">
-            <div class="iphhdr">
-              <div>
-                <div class="iphhdr-t">Recents</div>
-                <div class="iphhdr-s">18 Photos</div>
-              </div>
-              <div class="iphhdr-b">Select</div>
-            </div>
-            <div class="ptile"><img id="p-portrait" src="" alt="Portrait" loading="lazy"><div class="ptov"><div class="ptlbl">Portrait</div></div></div>
-            <div class="ptile"><img id="p-baby" src="" alt="Baby photo" loading="lazy"><div class="ptov"><div class="ptlbl">Baby</div></div></div>
-            <div class="ptile"><img id="p-toronto" src="" alt="Toronto" loading="lazy"><div class="ptov"><div class="ptlbl">Toronto</div></div></div>
-            <div class="ptile"><img id="p-sunrise" src="" alt="Sunrise" loading="lazy"><div class="ptov"><div class="ptlbl">Sunrise</div></div></div>
-            <div class="ptile"><img id="p-egypt" src="" alt="Travel in Egypt" loading="lazy"><div class="ptov"><div class="ptlbl">Egypt</div></div></div>
-            <div class="ptile"><img id="p-niagara" src="" alt="Niagara Falls" loading="lazy"><div class="ptov"><div class="ptlbl">Niagara Falls</div></div></div>
-            <div class="ptile"><img id="p-skywheel" src="" alt="Niagara SkyWheel" loading="lazy"><div class="ptov"><div class="ptlbl">SkyWheel</div></div></div>
-            <div class="ptile"><img id="p-blue-mountain" src="" alt="Blue Mountain" loading="lazy"><div class="ptov"><div class="ptlbl">Blue Mountain</div></div></div>
-            <div class="ptile"><img id="p-museum" src="" alt="Museum of Illusions" loading="lazy"><div class="ptov"><div class="ptlbl">Museum of Illusions</div></div></div>
-            <div class="ptile"><img id="p-fictional-bf" src="" alt="Fictional boyfriend photo" loading="lazy"><div class="ptov"><div class="ptlbl">Fictional BF</div></div></div>
-            <div class="ptile"><img id="p-perfect-timing" src="" alt="Perfect timing" loading="lazy"><div class="ptov"><div class="ptlbl">Perfect Timing</div></div></div>
-            <div class="ptile"><img id="p-rainbow" src="" alt="Rainbow" loading="lazy"><div class="ptov"><div class="ptlbl">Rainbow</div></div></div>
-            <div class="ptile"><img id="p-seas-the-day" src="" alt="Seas the day" loading="lazy"><div class="ptov"><div class="ptlbl">Seas the Day</div></div></div>
-            <div class="ptile"><img id="p-school-merch" src="" alt="School merch" loading="lazy"><div class="ptov"><div class="ptlbl">School Merch</div></div></div>
-            <div class="ptile"><img id="p-lego-project" src="" alt="Lego project" loading="lazy"><div class="ptov"><div class="ptlbl">Lego Project</div></div></div>
-            <div class="ptile"><img id="p-seneca-grad" src="" alt="Seneca graduation" loading="lazy"><div class="ptov"><div class="ptlbl">Seneca Grad</div></div></div>
-            <div class="ptile"><img id="p-york-u" src="" alt="York University" loading="lazy"><div class="ptov"><div class="ptlbl">York U</div></div></div>
-            <div class="ptile"><img id="p-city" src="" alt="City moment" loading="lazy"><div class="ptov"><div class="ptlbl">City Moment</div></div></div>          </div>
-          <a href="https://www.instagram.com/helloitszil/" target="_blank" class="iglnk2">📸 More on Instagram — <strong style="color:var(--ac)">@helloitszil</strong></a>
-        </div>
-      </div>
-    </div>
+      </div></div>
   </div>
 </section>
 
@@ -610,6 +586,49 @@ footer a:hover{color:var(--ac)}
   </div>
 </section>
 
+<section id="photos" class="lens-section">
+  <div class="sec fu">
+    <details class="lens-details">
+      <summary class="lens-summary">
+        <div>
+          <span class="stag">Photography</span>
+          <h2>Through My Lens</h2>
+          <p>A small peek at how I see the world outside work. Optional, personal, and here if you want the extra colour.</p>
+        </div>
+        <span class="lens-toggle">View Photos</span>
+      </summary>
+      <div class="lens-content about-photos">
+        <div class="iphgrid lens-grid">
+            <div class="iphhdr">
+              <div>
+                <div class="iphhdr-t">Recents</div>
+                <div class="iphhdr-s">18 Photos</div>
+              </div>
+              <div class="iphhdr-b">Select</div>
+            </div>
+            <div class="ptile"><img id="p-portrait" src="" alt="Portrait" loading="lazy"><div class="ptov"><div class="ptlbl">Portrait</div></div></div>
+            <div class="ptile"><img id="p-baby" src="" alt="Baby photo" loading="lazy"><div class="ptov"><div class="ptlbl">Baby</div></div></div>
+            <div class="ptile"><img id="p-toronto" src="" alt="Toronto" loading="lazy"><div class="ptov"><div class="ptlbl">Toronto</div></div></div>
+            <div class="ptile"><img id="p-sunrise" src="" alt="Sunrise" loading="lazy"><div class="ptov"><div class="ptlbl">Sunrise</div></div></div>
+            <div class="ptile"><img id="p-egypt" src="" alt="Travel in Egypt" loading="lazy"><div class="ptov"><div class="ptlbl">Egypt</div></div></div>
+            <div class="ptile"><img id="p-niagara" src="" alt="Niagara Falls" loading="lazy"><div class="ptov"><div class="ptlbl">Niagara Falls</div></div></div>
+            <div class="ptile"><img id="p-skywheel" src="" alt="Niagara SkyWheel" loading="lazy"><div class="ptov"><div class="ptlbl">SkyWheel</div></div></div>
+            <div class="ptile"><img id="p-blue-mountain" src="" alt="Blue Mountain" loading="lazy"><div class="ptov"><div class="ptlbl">Blue Mountain</div></div></div>
+            <div class="ptile"><img id="p-museum" src="" alt="Museum of Illusions" loading="lazy"><div class="ptov"><div class="ptlbl">Museum of Illusions</div></div></div>
+            <div class="ptile"><img id="p-fictional-bf" src="" alt="Fictional boyfriend photo" loading="lazy"><div class="ptov"><div class="ptlbl">Fictional BF</div></div></div>
+            <div class="ptile"><img id="p-perfect-timing" src="" alt="Perfect timing" loading="lazy"><div class="ptov"><div class="ptlbl">Perfect Timing</div></div></div>
+            <div class="ptile"><img id="p-rainbow" src="" alt="Rainbow" loading="lazy"><div class="ptov"><div class="ptlbl">Rainbow</div></div></div>
+            <div class="ptile"><img id="p-seas-the-day" src="" alt="Seas the day" loading="lazy"><div class="ptov"><div class="ptlbl">Seas the Day</div></div></div>
+            <div class="ptile"><img id="p-school-merch" src="" alt="School merch" loading="lazy"><div class="ptov"><div class="ptlbl">School Merch</div></div></div>
+            <div class="ptile"><img id="p-lego-project" src="" alt="Lego project" loading="lazy"><div class="ptov"><div class="ptlbl">Lego Project</div></div></div>
+            <div class="ptile"><img id="p-seneca-grad" src="" alt="Seneca graduation" loading="lazy"><div class="ptov"><div class="ptlbl">Seneca Grad</div></div></div>
+            <div class="ptile"><img id="p-york-u" src="" alt="York University" loading="lazy"><div class="ptov"><div class="ptlbl">York U</div></div></div>
+            <div class="ptile"><img id="p-city" src="" alt="City moment" loading="lazy"><div class="ptov"><div class="ptlbl">City Moment</div></div></div>          </div>
+          <a href="https://www.instagram.com/helloitszil/" target="_blank" class="iglnk2">📸 More on Instagram — <strong style="color:var(--ac)">@helloitszil</strong></a>
+      </div>
+    </details>
+  </div>
+</section>
 <section id="contact" class="ctsec">
   <img id="img-contact" class="ctbg" src="" alt="">
   <div class="ctov"></div>
